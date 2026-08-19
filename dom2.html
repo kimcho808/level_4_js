@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>DOM생성 삽입 삭제 복제</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/dom2.js" defer></script>
+    <style>
+        header {}
+        header .d_menu {}
+        header .d_menu nav {}
+        /* html에 태그가 보이지 않아도 자바스크립트에서 복붙을 했기 때문에 만들어져 있음 */
+        /* 콘솔 보면 만들어져 있는 것을 볼 수 있음 */
+        header .d_menu nav a {color:#00f;}
+        header .m_menu {}
+        header .m_menu nav {}
+        header .m_menu nav a {color:#f00;}
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 아래 둘중에 하나만 적은 다음 나머지는 js로 -->
+        <!-- 데스크탑 메뉴 (JS 동적 붙여넣기 대상) -->
+        <div class="d_menu"><!-- 붙여넣기 위치 (아래 nav) --></div>
+        <!-- 모바일 메뉴 (태그O) -->
+        <div class="m_menu">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Project</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>
