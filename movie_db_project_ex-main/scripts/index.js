@@ -40,3 +40,55 @@ for(let i=0; i<10; i++){
     aniLi.innerHTML += `<a href="#"><img src="${animeDB[i].aniposter}" alt="${animeDB[i].anititle}"></img></a>`
     animeMovie.appendChild(aniLi);
 }
+
+// ---------------------------------------------------------26/9/4
+// 무비차트 + swiper
+// swiper-slide 반복 생성해서 swiper-wrapper에 붙여넣기
+// swiper-wrapper말고 swiper만 변수 만들어서 할거임
+// swiper 플러그인 함수 연결은 swiper 최종연결
+const chart_swiper = document.querySelector('.chart_swiper');
+console.log(chart_swiper);
+
+const chart_swiper_func = new Swiper(chart_swiper,{
+    slidesPerView:2,
+    spaceBetween:10,
+}); // 플러그인 연결
+
+for(let i=0; i<5; i++){
+    const chart_slide = document.createElement('div'); // swiper-slide(class) 이름 붙일 태그 만들기
+    chart_slide.classList.add('swiper-slide'); // 만든 태그에 swiper-slide(class) 이름 붙이기
+
+    chart_slide.innerHTML = `<p class="num">${movieDB[i].id}위</p>`;
+    chart_slide.innerHTML += `<h3>${movieDB[i].title}</h3>`;
+    chart_slide.innerHTML += `<p class="rating">${movieDB[i].rating}</p>`;
+    chart_slide.innerHTML += `<p class="story">${movieDB[i].summary}</p>`;
+    chart_slide.style.backgroundImage = `url(${movieDB[i].poster})`;
+
+    chart_swiper.children[0].appendChild(chart_slide); // html에 있는 swiper에 붙이기
+}
+
+// ----------------------------------- 애니메이션 차트
+// swiper 변수
+// div 태그 만들기
+// 만든 태그에 (swiper-slide)붙이기
+// swiper-slide 안에 태그 붙이기
+const aniSwiper = document.querySelector('.ani_swiper');
+console.log(aniSwiper);
+
+const ani_chart_swiper = new Swiper(aniSwiper,{
+    slidesPerView:3,
+    spaceBetween:16,
+});
+
+for(let i=0; i<9; i++){
+    const ani_slide = document.createElement('div');
+    ani_slide.classList.add('swiper-slide'); //classList는 이미 class이니까 () 안에 . 붙이지 않기
+
+    ani_slide.innerHTML = `<p class="num">${animeDB[i].id}</p>`;
+    ani_slide.innerHTML += `<h3>${animeDB[i].anititle}</h3>`;
+    ani_slide.innerHTML += `<p class="rating">${animeDB[i].rating}</p>`;
+    ani_slide.innerHTML += `<p class="summary">${animeDB[i].summary}</p>`;
+    ani_slide.style.backgroundImage = `url(${animeDB[i].aniposter})`;
+
+    aniSwiper.children[0].appendChild(ani_slide);
+}

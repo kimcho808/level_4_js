@@ -9,3 +9,33 @@ main .anime_movie {display:flex; gap:12px; overflow:hidden;}
 main .anime_movie li {}
 main .anime_movie li a {display:block;}
 main .anime_movie li a img {}
+/* 2026 무비 차트 */
+main .chart {}
+main .chart .chart_swiper {}
+main .chart .chart_swiper .swiper-wrapper {}
+main .chart .chart_swiper .swiper-wrapper .swiper-slide {
+    height:300px;
+    background-size:cover;
+    background-position:center;
+    display:flex; flex-flow:column nowrap; justify-content:flex-end;
+}
+main .chart .chart_swiper .swiper-wrapper .swiper-slide::after {
+    content:''; display:block; width:100%; height:40%;
+    position:absolute; left:0; bottom:0;
+    background:rgba(255, 255, 255, 0.8);
+}
+main .chart .chart_swiper .swiper-wrapper .swiper-slide > * {
+    position:relative; z-index:100;
+}
+/* 2026 애니메이션 차트 */
+main .ani_chart {}
+main .ani_chart .ani_swiper {}
+main .ani_chart .ani_swiper .swiper-wrapper {}
+main .ani_chart .ani_swiper .swiper-wrapper .swiper-slide {
+    background-size:cover; background-position:center;
+    height:200px;
+}
+main .ani_chart .ani_swiper .swiper-wrapper .swiper-slide .num {}
+main .ani_chart .ani_swiper .swiper-wrapper .swiper-slide .h3 {}
+main .ani_chart .ani_swiper .swiper-wrapper .swiper-slide .rasting {}
+main .ani_chart .ani_swiper .swiper-wrapper .swiper-slide .summary {}
