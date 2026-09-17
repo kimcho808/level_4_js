@@ -263,6 +263,23 @@
             }
         })
 
+        //타이머 함수 기초 연습
+        const timer1 = setTimeout(()=>{
+            console.log('실행문구'); //1초 뒤에 뜸
+            //alert('이 웹사이트는 포트폴리오용 입니다.')
+        },1000) //1000은 1초 (2000->2초)
+
+        //1.5초 지날때마다 무한 반복 실행(clearInterval 종료 가능)
+        const timer2 = setInterval(()=>{
+            console.log('반복실행 문구'); //1.5초마다 계속 실행함
+        },1500)
+
+        //시간 관련된 것은 time 함수만 쓸 수 있음 조건문은 시간을 인식 못함
+        setTimeout(()=>{
+            console.log('반복 정지');
+            clearInterval(timer2); //5초 뒤에 마지막 console을 찍고 timer2를 종료해라
+        },5000)
+
         // 웹브라우저 스크롤 복원 기능 리셋하고 위에서 시작하기
         if ('scrollRestoration' in history) { history.scrollRestoration = 'manual';}
         window.addEventListener('load', () => {
