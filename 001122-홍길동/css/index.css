@@ -39,6 +39,7 @@ main .hero .hero_wrapper {
     display:flex; flex-flow:column nowrap; width:max-content;
 }
 main .hero .hero_slide {width:1200px; height:300px; overflow: hidden;}
+main .hero .hero_wrapper {position:relative;}
 main .hero .hero_slide a {}
 main .hero .hero_slide img {}
 main .container {display:flex;}
