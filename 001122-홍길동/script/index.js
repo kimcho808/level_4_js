@@ -181,6 +181,7 @@ let count = 0; //초기값 0으로 시작해서 heroSlide의 개수만큼 증가
 const slideTimer = setInterval(function(){
     count++;
     if(count > 2){count = 0}
+    //3가지 방법 다 할 수 있는 것이니 손가는대로
     $('.hero_wrapper').css('transform',`translateY(-${count*300}px)`);
     //$('.hero_wrapper').css('transform', 'translateY(-'+(count*300)+'px');
     //기존 js css에서 주로 다루는 trasition + transform 애니메이션 묶음 전용 제이쿼리 함수
